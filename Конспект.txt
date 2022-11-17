@@ -1,0 +1,106 @@
+//Props
+// const UserData = (props) =>{
+//   return(
+//     <div>
+//       <div>{props.name}</div>
+//       <div>{props.surname}</div>
+//     </div>
+//   )
+// }
+
+// const PropChildren = (props) => {
+//   return <div className='props-children' >{props.children}</div>;
+// };
+
+// class App extends React.Component{
+//   constructor(props){
+//     super(props);
+
+//     this.state = {};
+//   }
+
+//   render(){
+//     return(
+//     <div>
+//       <UserData name='Mari' surname='Serotyuk' />
+//       <UserData name='Mari' surname='Serotyuk' />
+//       <UserData name='Mari' surname='Serotyuk' />
+//       <UserData name='Mari' surname='Serotyuk' />
+
+//       <PropChildren>
+//       <UserData name='Mari' surname='Serotyuk' />
+//       <UserData name='Mari' surname='Serotyuk' />
+//       </PropChildren>
+//     </div>
+//     )
+    
+//   }
+// }
+
+
+//State
+
+
+
+// class App extends React.Component {
+//   constructor(props){
+//     super(props);
+
+//     this.state = {
+//       counter: 0,
+//     }
+//   }
+  
+  // state = {counter: 0};
+
+//   increment = () => {
+//     this.setState({ counter : this.state.counter + 1})
+//   }
+
+//   decrement = () =>{
+//     this.setState({ counter : this.state.counter - 1})
+//   }
+
+//   render() {
+//     return(
+//       <div>
+//        <div>{this.state.counter}</div>
+
+//        <button onClick={this.increment}>Increment</button>
+
+//        <button onClick={this.decrement}>Decrement</button>
+//       </div>
+//     )
+//   }
+// }
+
+//События
+
+// const PropChildren = (props) => {
+//   return <div className='props-children'>{props.children}</div>;
+// }
+
+// class App extends React.Component{
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       counter: 0,
+//     };
+
+//   }
+
+//   increment(){
+//     this.setState({counter: this.state.counter + 1 });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <div>{this.state.counter}</div>
+//         {/* <button onClick={this.increment.bind(this)}>Increment</button> */}
+//         <button onClick={(e) => this.increment(e)}>Increment</button>
+//       </div>
+//     )
+//   }
+// }
