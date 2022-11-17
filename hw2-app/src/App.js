@@ -1,25 +1,37 @@
 import './App.css';
+import React from 'react';
 
+//Task1
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src='' className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const UserCard = (props) => {
+  return(
+    <div>
+      <div>User information:</div>
+      <div>Name: {props.name}</div>
+      <div>Surname: {props.surname}</div>
+      <div>Age: {props.age}</div>
     </div>
-  );
+  )
+}
+
+class App extends React.Component {
+  state = {
+    name: 'Ann',
+    surname: 'Jonson',
+    age: 29
+  }
+  
+  render(){
+    return (
+      <div>
+        <UserCard 
+        name={this.state.name}
+        surname={this.state.surname}
+        age={this.state.age} /> 
+      </div>
+    );
+  }
+  
 }
 
 export default App;
