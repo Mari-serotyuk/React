@@ -14,7 +14,6 @@ class App extends React.Component {
   render(){
 
     return (
-      
       <div>
 
         {/* props окремо */}
@@ -31,10 +30,8 @@ class App extends React.Component {
         <UserQuestAboutAge userData={this.state}/>
       
       </div>
-    
     )  
-  }
-  
+  } 
 }
 
 export default App;
