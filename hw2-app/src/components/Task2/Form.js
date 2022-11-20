@@ -19,11 +19,15 @@ onSubmit = (event) => {
             error: 'З вашими даними щось пішло не так'
         })
     }else{
+
+        alert(`Вітаємо, ${this.state.name} ${this.state.surname}`)
         this.setState({
-            error: `Вітаємо, ${this.state.name} ${this.state.surname}`,
+            error: '',
             name: '',
-            surname: ''
+            surname: '',
+            
         });
+        
     }
 
     console.log(this.state.name, this.state.surname)
