@@ -1,79 +1,71 @@
 import React from 'react';
 
 class Form extends React.Component {
-state = {
-    name: '',
-    surname: '',
-    error: ''
-}
-
-onSubmit = (event) => {
-    event.preventDefault();
-
-    if((!this.state.name) || (!this.state.surname)) {
-        this.setState({
-            error: 'Введіть свої дані'
-        })
-    }else if ((this.state.name.length < 3) || (this.state.surname.length < 3)) {
-        this.setState({
-            error: 'З вашими даними щось пішло не так'
-        })
-    }else{
-
-        alert(`Вітаємо, ${this.state.name} ${this.state.surname}`)
-        this.setState({
-            error: '',
-            name: '',
-            surname: '',
-            
-        });
-        
+    state = {
+        name: '',
+        surname: '',
+        error: ''
     }
 
-    console.log(this.state.name, this.state.surname)
-};
+    changeInputValue = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value,
+            error: ''
+        });
 
-changeNameValue = (event) => {
-    this.setState({name: event.target.value});
-
-    this.setState({
-        error: ''
-    })
-}
-
-changeSurnameValue = (event) => {
-    this.setState({surname: event.target.value});
-
-    this.setState({
-        error: ''
-    })
-};
+    }
 
 
-render() {
 
-    return(
-        <div>
-            <form onSubmit={this.onSubmit}>
-                <div>
-                    <input 
-                    placeholder='Name' 
-                    name='name' 
-                    value={this.state.name}
-                    onChange={this.changeNameValue} />
-                </div>
-                <div>
-                    <input 
-                    placeholder='Surname' 
-                    name='surname'
-                    value={this.state.surname} 
-                    onChange={this.changeSurnameValue}/>
-                </div>
-                <button type='submit'>Submit</button>
-            </form>
-        </div>
-    )
-}
+    onSubmit = (event) => {
+        event.preventDefault()
+
+        const {name, surname} = this.state;
+
+        if((!name) || (!surname))  {
+            this.setState({
+                error: 'Введіть свої дані'
+            })
+        }else if ((name.length < 3) || (surname.length < 3)) {
+            this.setState({
+                error: 'З вашими даними щось пішло не так'
+            })
+        }else{
+            alert(`Вітаємо, ${name} ${surname}`)
+            this.setState({
+                error: '',
+                name: '',
+                surname: '',
+            });
+            
+        }
+    };
+
+    render() {
+
+        return(
+            <div>
+                <form onSubmit={this.onSubmit}>
+                    <div>
+                        <input 
+                        placeholder='Name' 
+                        name='name' 
+                        value={this.state.name}
+                        onChange={this.changeInputValue} />
+                    </div>
+                    <div>
+                        <input 
+                        placeholder='Surname' 
+                        name='surname'
+                        value={this.state.surname} 
+                        onChange={this.changeInputValue}/>
+                    </div>
+                    {this.state.error && (<p>{this.state.error}</p>)}
+                    <button type='submit' >Submit</button>
+                </form>
+            </div>
+        )
+    }
 }
 
 export default Form;

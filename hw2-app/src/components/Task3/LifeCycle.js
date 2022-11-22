@@ -1,29 +1,26 @@
 import React from "react";
 
 class LifeCycle extends React.Component {
-    constructor(props) {
-       super(props);
-        this.state = {
-            page: 'Home',
-            title: 'Home page'
-        };
+    state = {
+        title: 'Home',
+    };
+
+    componentDidMount(){
+        this.changeTitle()
     }
 
-    componentDidUpdate(prevState) {
-        if(this.state.title !== prevState){
-            this.setState({title: 'Contacts page'})
-        }
+    componentDidUpdate() {
+        this.changeTitle()
     }
 
-    handleClick = (event) => {
-        event.preventDefault();
-        this.setState({page: 'Contacts'})
-    }
+    handleClick = (event) => this.setState({title: 'Contacts'});
+
+    changeTitle = () => document.title = this.state.title;
 
     render(){
+        
         return(
             <div>
-                <h1>{this.state.title}</h1>
                 <button onClick={this.handleClick}>Push me</button>
             </div>
         )

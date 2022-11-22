@@ -1,11 +1,11 @@
-export const UserCard = (props) => {
+export const UserCard = ({name, surname, age}) => {
   
     return(
       <div>
         <div>User information:</div>
-        <div>Name: {props.name}</div>
-        <div>Surname: {props.surname}</div>
-        <div>Age: {props.age}</div>
+        <div>Name: {name}</div>
+        <div>Surname: {surname}</div>
+        <div>Age: {age}</div>
       </div>
     )
   }

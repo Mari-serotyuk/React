@@ -18,9 +18,10 @@ class App extends React.Component {
 
         {/* props окремо */}
         <UserCard 
-        name={this.state.name}
-        surname={this.state.surname}
-        age={this.state.age} /> 
+          name={this.state.name}
+          surname={this.state.surname}
+          age={this.state.age} 
+        /> 
 
         {/* state цілий */}
         <UserCard2 userData={this.state}/>
