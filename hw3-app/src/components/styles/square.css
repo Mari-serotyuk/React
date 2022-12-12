@@ -1,0 +1,14 @@
+
+.square{
+    width: 100px;
+    height: 100px;
+    background: violet;
+}
+
+.translationSquare{
+    width: 200px;
+    height: 100px;
+    translate: 200px;
+    transition: 2s;
+    background: blue;
+}
